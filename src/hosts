@@ -1,0 +1,7 @@
+# Do not remove the following line, or various programs
+# that require network functionality will fail.
+
+#SYS BACKUP DONE#
+192.168.70.128 virt128
+192.168.70.129 virt129
+192.168.70.130 virt130
