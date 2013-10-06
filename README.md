@@ -5,37 +5,23 @@ hbase-setup-packs
 方案亮点
 1、只需准备好搭建所必须的JDK，Hadoop，HBase，Zookeeper包，并简单修改两个配置文件；
 2、利用expect实现交互性操作的自动化，去除安装过程中人为值守协助操作过程；
-3、对Hadoop，HBase，Zookeeper相关配置文件统一管理，修改主节点配置，同步一下完成
+3、对Hadoop，HBase，Zookeeper相关配置文件统一管理，修改主节点配置，同步一下完成.
 
-部署包整体结构
-hbase-setup-packs
-                                  |————src
-                                  |                     |————zookeeper.tar.gz, hbase.tar.gz, hadoop.tar.gz
-                                  |                     |_______expect.tar.gz,tcl.tar.gz
-                                  |_______conf
-                                  |                      |______core.cfg, hosts
-                                  |                      |______zookeeper,hbase,hadoop/conf
-                                  |_______bin
-                                  |                      |______setup.sh
-                                  |                      |______remote_guide.sh, rsync_conf.sh, gen_ssh.sh
-                                  |                      |______mgr_cluster.sh
-                                  |_______backup
-                                                         |______hosts,profile,limits.conf,network
 
 使用指南
-       假设我们需要用192.168.70.128,192.168.70.129,10.28.192.70.130三台机器作为节点搭建集群，规划如下：
+=================
+
+假设我们需要用192.168.70.128,192.168.70.129,10.28.192.70.130三台机器作为节点搭建集群，规划如下：
 192.168.70.128     #nn,zk,hmaster
 192.168.70.129     #dn,zk,rs
 192.168.70.130     #dn,zk,rs
 
 1、首先从【资源列表】中下载hbase-setup-packs.tar.gz，将其上传至拟搭建集群中准备作为HMaster的机器上，如192.168.70.128的/usr/local/目录，然后执行
-[html] view plaincopy
 [root@virt128 ~]# cd /usr/local/src  
 [root@virt128 ~]# tar xvf hbase-setup-packs.tar.gz  
-[root@virt128 ~]# cd hbase-setup-packs/conf  
+[root@virt128 ~]# cd hbase-setup-packs/conf
+
  2、修改配置文件core.cfg和hosts
-[html] view plaincopy
-#!/usr/bin/env bash  
 root_pwd=cdyanfa            #root账户密码  
 install_usr=hdfs            #拟安装hbase集群的账户名称  
 install_pwd=hdfs            #拟安装hbase集群的账户密码  
@@ -65,7 +51,6 @@ ulimit_n=65535   #hbase账户最大打开文件数
 ulimit_u=65535   #hbase账户最大进程数  
 注：core.cfg
 
-[html] view plaincopy
 192.168.70.128 node128  #集群中IP及其主机名称列表，一行一个节点  
 192.168.70.129 node129  
 192.168.70.130 node130  
