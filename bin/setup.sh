@@ -168,13 +168,15 @@ create_dirs() {
    rm -rf $hadoop_namenode_dir
    rm -rf $hadoop_datanode_dir
    rm -rf $hadoop_log_dir
+   rm -rf $hadoop_tmp_dir
    rm -rf $zookeeper_data_dir
    rm -rf $zookeeper_log_dir
    rm -rf $hbase_log_dir
-  
+     
    mkdir -p $hadoop_namenode_dir
    mkdir -p $hadoop_datanode_dir
    mkdir -p $hadoop_log_dir
+   mkdir -p $hadoop_tmp_dir
    mkdir -p $zookeeper_data_dir
    mkdir -p $zookeeper_log_dir
    mkdir -p $hbase_log_dir 
@@ -182,6 +184,7 @@ create_dirs() {
    chown -R $install_usr:$install_usr $hadoop_namenode_dir
    chown -R $install_usr:$install_usr $hadoop_datanode_dir
    chown -R $install_usr:$install_usr $hadoop_log_dir
+   chown -R $install_usr:$install_usr $hadoop_tmp_dir
    chown -R $install_usr:$install_usr $zookeeper_data_dir
    chown -R $install_usr:$install_usr $zookeeper_log_dir
    chown -R $install_usr:$install_usr $hbase_log_dir
