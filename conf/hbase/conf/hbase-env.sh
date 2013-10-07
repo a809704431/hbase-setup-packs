@@ -26,7 +26,7 @@
 # into the startup scripts (bin/hbase, etc.)
 
 # The java implementation to use.  Java 1.6 required.
-# export JAVA_HOME=/usr/java/jdk1.6.0/
+export JAVA_HOME=/usr/local/jdk1.6.0_25
 
 # Extra Java CLASSPATH elements.  Optional.
 # export HBASE_CLASSPATH=
@@ -80,7 +80,7 @@ export HBASE_OPTS="-XX:+UseConcMarkSweepGC"
 # export HBASE_SSH_OPTS="-o ConnectTimeout=1 -o SendEnv=HBASE_CONF_DIR"
 
 # Where log files are stored.  $HBASE_HOME/logs by default.
-# export HBASE_LOG_DIR=${HBASE_HOME}/logs
+export HBASE_LOG_DIR=/export/hbase/logs
 
 # Enable remote JDWP debugging of major HBase processes. Meant for Core Developers 
 # export HBASE_MASTER_OPTS="$HBASE_MASTER_OPTS -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=8070"
@@ -103,4 +103,4 @@ export HBASE_OPTS="-XX:+UseConcMarkSweepGC"
 # export HBASE_SLAVE_SLEEP=0.1
 
 # Tell HBase whether it should manage it's own instance of Zookeeper or not.
-# export HBASE_MANAGES_ZK=true
+export HBASE_MANAGES_ZK=false

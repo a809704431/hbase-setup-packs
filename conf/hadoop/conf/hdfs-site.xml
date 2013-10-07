@@ -4,5 +4,18 @@
 <!-- Put site-specific property overrides in this file. -->
 
 <configuration>
-
+    <property>  
+          <name>dfs.name.dir</name>  
+          <value>/export/hadoop/nn</value>  
+     </property>  
+   
+     <property>  
+          <name>dfs.data.dir</name>  
+          <value>/export/hadoop/dn</value>  
+     </property>  
+   
+     <property>  
+          <name>dfs.replication</name>  
+          <value>3</value>  
+     </property>  
 </configuration>
