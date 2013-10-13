@@ -80,6 +80,10 @@ create_user() {
 copy_setup_packs() {
     cd $BASEDIR/..
     basename=`basename $BASEDIR`
+    if [ $basename != "hbase-setup-packs" ]; then
+	echo -e "\e[1;31m Sorry, setup packs should named hbase-setup-packs, but yours are $basename.\e[0m"
+       exit 1;
+    fi
     echo "Tar setup resoures, start."
     tar -czpf hbase-packs.tar.gz $basename
     mv hbase-packs.tar.gz /usr/local
